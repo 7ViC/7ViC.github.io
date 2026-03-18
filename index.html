@@ -110,27 +110,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5vw;height:52px;di
 
 /* EDUCATION */
 #education{background:var(--gray);padding:7rem 6vw}
-.edu-grid{display:flex;flex-direction:column;gap:1.25rem;max-width:820px}
-.edu-card{background:rgba(255,255,255,.02);border:.5px solid rgba(255,255,255,.08);border-radius:1rem;padding:0;overflow:hidden;transition:border-color .3s,background .3s}
-.edu-card:hover{border-color:rgba(41,151,255,.25);background:rgba(41,151,255,.02)}
-.edu-card-header{padding:1.8rem 2rem 1.4rem;display:flex;align-items:flex-start;gap:1.4rem;border-bottom:.5px solid rgba(255,255,255,.06)}
-.edu-icon{width:48px;height:48px;border-radius:.75rem;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.edu-grid{display:flex;flex-direction:column;gap:0}
+.edu-card{border-top:.5px solid rgba(255,255,255,.07);transition:background .35s}
+.edu-card:hover{background:rgba(255,255,255,.012)}
+.edu-card:last-child{border-bottom:.5px solid rgba(255,255,255,.07)}
+.edu-card-inner{padding:3rem 6vw;display:grid;grid-template-columns:250px 1fr;gap:3rem;align-items:start}
+.edu-left{}
+.edu-icon{width:40px;height:40px;border-radius:.65rem;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;margin-bottom:1rem}
 .edu-icon.blue{background:rgba(41,151,255,.1)}
 .edu-icon.green{background:rgba(48,209,88,.1)}
 .edu-icon.amber{background:rgba(255,159,10,.1)}
 .edu-icon.pink{background:rgba(255,55,95,.08)}
-.edu-title{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.04em;color:var(--white);line-height:1.1}
-.edu-org{font-size:.74rem;color:var(--accent);margin-top:.22rem;letter-spacing:.05em}
-.edu-dates{font-size:.67rem;color:var(--text-muted);margin-top:.15rem}
-.edu-tag{display:inline-block;margin-top:.6rem;font-size:.63rem;letter-spacing:.06em;padding:.22rem .65rem;border-radius:2rem}
+.edu-title{font-family:'Bebas Neue',sans-serif;font-size:1.38rem;letter-spacing:.04em;color:var(--white);line-height:1.1;margin-bottom:.35rem}
+.edu-org{font-size:.76rem;color:var(--accent);letter-spacing:.06em;font-weight:500}
+.edu-dates{font-size:.68rem;color:var(--text-muted);margin-top:.28rem;line-height:1.55}
+.edu-tag{display:inline-block;margin-top:.85rem;font-size:.63rem;letter-spacing:.06em;padding:.22rem .65rem;border-radius:2rem}
 .edu-tag.degree{color:var(--accent3);border:.5px solid rgba(255,55,95,.25);background:rgba(255,55,95,.05)}
 .edu-tag.ra{color:var(--accent2);border:.5px solid rgba(48,209,88,.25);background:rgba(48,209,88,.05)}
 .edu-tag.ta{color:var(--accent4);border:.5px solid rgba(255,159,10,.25);background:rgba(255,159,10,.05)}
-.edu-card-body{padding:1.4rem 2rem 1.8rem}
-.edu-bullets{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.edu-bullets li{font-size:.845rem;color:var(--text-secondary);padding-left:1.15rem;position:relative;line-height:1.7;font-weight:300}
-.edu-bullets li::before{content:'—';position:absolute;left:0;color:var(--text-muted);font-size:.7rem}
-.edu-tech-row{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:1.1rem}
+.edu-bullets{list-style:none;display:flex;flex-direction:column;gap:.78rem;padding-top:.15rem}
+.edu-bullets li{font-size:.865rem;color:var(--text-secondary);padding-left:1.2rem;position:relative;line-height:1.72;font-weight:300}
+.edu-bullets li::before{content:'—';position:absolute;left:0;color:var(--text-muted);font-size:.72rem}
+.edu-tech-row{display:flex;flex-wrap:wrap;gap:.32rem;margin-top:1.3rem}
 
 /* STANDOUT */
 #standout{background:var(--black);padding:7rem 6vw}
@@ -180,7 +181,7 @@ footer{padding:1.3rem 6vw;border-top:.5px solid rgba(255,255,255,.06);display:fl
 
 @media(max-width:900px){
   .hero-photo{width:100%}
-  .exp-inner{grid-template-columns:1fr}
+  .exp-inner,.edu-card-inner{grid-template-columns:1fr}
   .projects-stack,.standout-grid{grid-template-columns:1fr}
   .skills-mosaic{grid-template-columns:1fr 1fr}
   .contact-links-grid{grid-template-columns:1fr}
@@ -188,7 +189,7 @@ footer{padding:1.3rem 6vw;border-top:.5px solid rgba(255,255,255,.06);display:fl
 @media(max-width:600px){
   .skills-mosaic{grid-template-columns:1fr}
   .project-tile{padding:2.2rem}
-  .edu-card-header{flex-direction:column;gap:1rem}
+
 }
 </style>
 </head>
@@ -368,16 +369,14 @@ footer{padding:1.3rem 6vw;border-top:.5px solid rgba(255,255,255,.06);display:fl
 
     <!-- MS Degree -->
     <div class="edu-card sr">
-      <div class="edu-card-header">
-        <div class="edu-icon blue">🎓</div>
-        <div>
+      <div class="edu-card-inner">
+        <div class="edu-left">
+          <div class="edu-icon blue">🎓</div>
           <div class="edu-title">M.S. Computer Science Engineering</div>
           <div class="edu-org">George Mason University</div>
           <div class="edu-dates">Graduated 2025 · Fairfax, VA</div>
           <span class="edu-tag degree">Graduate Degree</span>
         </div>
-      </div>
-      <div class="edu-card-body">
         <ul class="edu-bullets">
           <li>Concentrated coursework in algorithms, distributed systems, software architecture, machine learning, and scientific data mining.</li>
           <li>Applied advanced data structures, API design principles, and modern software engineering practices across coursework and research projects.</li>
@@ -387,48 +386,44 @@ footer{padding:1.3rem 6vw;border-top:.5px solid rgba(255,255,255,.06);display:fl
 
     <!-- Research Assistant -->
     <div class="edu-card sr sr-d1">
-      <div class="edu-card-header">
-        <div class="edu-icon green">🔬</div>
-        <div>
+      <div class="edu-card-inner">
+        <div class="edu-left">
+          <div class="edu-icon green">🔬</div>
           <div class="edu-title">Research Assistant — ML Systems &amp; Immersive Analytics</div>
           <div class="edu-org">George Mason University</div>
           <div class="edu-dates">Feb 2025 — May 2025 · Fairfax, VA</div>
           <span class="edu-tag ra">Research Assistant</span>
+          <div class="edu-tech-row">
+            <span class="tech-chip">JavaScript</span><span class="tech-chip">WebGL</span><span class="tech-chip">3D Visualization</span><span class="tech-chip">API Design</span><span class="tech-chip">Unit Testing</span><span class="tech-chip">Algorithms</span><span class="tech-chip">Data Structures</span>
+          </div>
         </div>
-      </div>
-      <div class="edu-card-body">
         <ul class="edu-bullets">
           <li>Architected scalable applications with real-time 3D visualization serving cross-functional research teams, implementing advanced algorithms and data structures achieving 60% performance optimization.</li>
           <li>Developed maintainable and testable codebases using JavaScript, WebGL, and API design principles with comprehensive unit testing, establishing technical direction for consumer-facing immersive applications.</li>
           <li>Led complex technical product efforts providing guidance to peers and implementing custom user interfaces using modern frameworks for immersive and spatial computing experiences.</li>
           <li>Collaborated with cross-functional stakeholders including product managers and engineering teams to optimize code quality, efficiency, and performance while resolving scalability issues in production environments.</li>
         </ul>
-        <div class="edu-tech-row">
-          <span class="tech-chip">JavaScript</span><span class="tech-chip">WebGL</span><span class="tech-chip">3D Visualization</span><span class="tech-chip">API Design</span><span class="tech-chip">Unit Testing</span><span class="tech-chip">Algorithms</span><span class="tech-chip">Data Structures</span>
-        </div>
       </div>
     </div>
 
     <!-- Teaching Assistant -->
     <div class="edu-card sr sr-d2">
-      <div class="edu-card-header">
-        <div class="edu-icon amber">📘</div>
-        <div>
+      <div class="edu-card-inner">
+        <div class="edu-left">
+          <div class="edu-icon amber">📘</div>
           <div class="edu-title">Teaching Assistant — SQL &amp; Machine Learning</div>
           <div class="edu-org">George Mason University</div>
           <div class="edu-dates">Aug 2024 — Jan 2025 · Fairfax, VA</div>
           <span class="edu-tag ta">Teaching Assistant</span>
+          <div class="edu-tech-row">
+            <span class="tech-chip">Python</span><span class="tech-chip">SQL</span><span class="tech-chip">Machine Learning</span><span class="tech-chip">Pattern Recognition</span><span class="tech-chip">Automated Grading</span><span class="tech-chip">Data Mining</span><span class="tech-chip">AI Curriculum</span>
+          </div>
         </div>
-      </div>
-      <div class="edu-card-body">
         <ul class="edu-bullets">
           <li>Provided technical guidance and established ownership of machine learning components for 110+ students, driving cross-functional partnerships and achieving 100% project completion through expert end-to-end understanding of ML algorithms and data structures.</li>
           <li>Implemented reusable software components for automated grading systems using Python and pattern recognition, improving code quality and efficiency by 30% through thoughtful code reviews and appropriate testing methodologies.</li>
           <li>Enhanced curriculum for scientific data mining and artificial intelligence courses, integrating industry best practices in unit testing, API design, and building maintainable codebases for large-scale data applications.</li>
         </ul>
-        <div class="edu-tech-row">
-          <span class="tech-chip">Python</span><span class="tech-chip">SQL</span><span class="tech-chip">Machine Learning</span><span class="tech-chip">Pattern Recognition</span><span class="tech-chip">Automated Grading</span><span class="tech-chip">Data Mining</span><span class="tech-chip">AI Curriculum</span>
-        </div>
       </div>
     </div>
 
